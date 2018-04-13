@@ -8,7 +8,7 @@ var reset = document.getElementById("reset");
 var highScoreText = document.getElementById("highscoretext")
 var attemptsText = document.getElementById("attemptstext")
 
-var squareArrSize = 8;
+var squareArrSize = 6;
 var colors = populateColors(squareArrSize);
 var highScore = 0;
 var attempts = 0;
@@ -49,7 +49,7 @@ for (var i = 0; i < squares.length; i++) {
 				gameOver = true;
 			}
 			else {
-				window.setTimeout(resetSquares, 3000);
+				window.setTimeout(resetSquares, 2000);
 			}
 		}
 	})
@@ -128,7 +128,7 @@ for (var i = 0; i < gameMode.length; i++) {
 				toggleSquares("none")
 				selected = gameMode[0]
 			} else {
-				squareArrSize = 8;
+				squareArrSize = 6;
 				toggleSquares("block")
 				selected = gameMode[1]
 			}
