@@ -1,7 +1,7 @@
 var targetColor = document.querySelector("#rgb");
 var messageDisplay = document.getElementById("message");
 var squares = document.querySelectorAll(".square");
-var header = document.getElementById("header");
+var header = document.querySelector("h1");
 var buttons = document.querySelectorAll("button");
 var gameMode = document.querySelectorAll(".mode")
 var reset = document.getElementById("reset");
@@ -22,7 +22,7 @@ targetColor.textContent = rgbValue;
 function resetSquares(){
 	header.style.backgroundColor = "rgb(0, 150, 200)";
 	gameWon = false;
-	messageDisplay.textContent = "";
+	// messageDisplay.textContent = "";
 	resetColors();
 }
 
@@ -33,12 +33,12 @@ for (var i = 0; i < squares.length; i++) {
 				attempts++
 				attemptsText.textContent = attempts;
 				if(this.style.backgroundColor == targetColor.textContent){
-					messageDisplay.innerHTML = 'Correct! <i class="fa fa-check" aria-hidden="true"></i>';
+					// messageDisplay.innerHTML = 'Correct! <i class="fa fa-check" aria-hidden="true"></i>';
 					highScore++
 					highScoreText.textContent = highScore;
 					applySameColor();
 				} else{
-					messageDisplay.innerHTML = 'Try Again! <i class="fa fa-times" aria-hidden="true"></i>'
+					// messageDisplay.innerHTML = 'Try Again! <i class="fa fa-times" aria-hidden="true"></i>'
 					this.style.backgroundColor = document.body.style.backgroundColor;
 				}
 				gameWon = true;
