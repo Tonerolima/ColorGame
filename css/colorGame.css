@@ -10,7 +10,7 @@ body{
 .square{
 	border-radius: 15px;
 	max-width: 170px;
-	min-width: 150px;
+	min-width: 100px;
 	padding-bottom: 170px;
 	float: left;
 	margin: 8px;
