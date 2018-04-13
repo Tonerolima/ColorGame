@@ -2,33 +2,31 @@ body{
 	background: #232323;
 	margin: 0;
 	text-transform: uppercase;
-	/*font-family: 'Poppins', sans-serif;*/
+	color: #fff;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
 }
 
 .square{
-	max-width: 250px;
+	/*max-width: 200px;*/
 	/*height: 300px;*/
 	border-radius: 15px;
 	/*width: auto !important;*/
-	/*max-width: 40%;*/
-	/*height: auto;*/
-	padding-bottom: 250px;
-	/*float: left;*/
-	margin: 10px;
-	/*transition: background 0.6s;*/
+	max-width: 200px;
+	min-width: 200px;
+	padding-bottom: 200px;
+	float: left;
+	margin: 8px;
+	transition: background 0.6s;
 }
 
 #container{
-	max-width: 1200px;
-	text-align: center;
+	max-width: 1300px;
 	margin: 15px auto;
-	padding-left: 8%;
 }
 
-#header{
+h1{
 	background-color: rgb(0, 150, 200);
-	color: #fff;
-	text-align: center;
 	padding: 10px 0;
 	margin: 0;
 	font-weight: 400;
@@ -40,38 +38,36 @@ body{
 	font-size: 200%;
 }
 
-#header2{
-	min-width: 600px;
-	background: rgb(255, 255, 255);
-	color: rgb(0, 150, 200);
+.headers {
+	min-width: 400px;
 	height: 30px;
-	text-align: center;
+	font-size: inherit
+}
+
+#header2{
+	background: rgb(255, 255, 255);
 	padding: 0px;
 }
 
-.buttons{
-	height: 100%;
-	margin: 0 5%;
-	width: 20%;
+#header3 {
+	background: rgb(0, 150, 200);
+	padding-top: 5px;
 }
 
-#highscore {
-	width: 20%;
+div span {
+	vertical-align: middle;
 }
 
 #attempts {
-	width: 20%;
+	margin-left: 30%;
 }
 
-
-#message{
-	display: inline-block;
-	width: 10%;
+#reset {
+	margin-right: 30%;
 }
 
-button{
+.buttons {
 	padding-right: 3px;
-	font-size: inherit;
 	border: none;
 	height: 100%;
 	background: none;
