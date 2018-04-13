@@ -31,11 +31,10 @@ h1{
 	transition: background 0.6s;
 }
 
-/*
 #rgb {
 	font-weight: 400;
+	font-size: 150%;
 }
-*/
 
 .headers {
 	min-width: 400px;
