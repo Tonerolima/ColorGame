@@ -8,20 +8,17 @@ body{
 }
 
 .square{
-	/*max-width: 200px;*/
-	/*height: 300px;*/
 	border-radius: 15px;
-	/*width: auto !important;*/
-	max-width: 200px;
-	min-width: 200px;
-	padding-bottom: 200px;
+	max-width: 170px;
+	min-width: 150px;
+	padding-bottom: 170px;
 	float: left;
 	margin: 8px;
 	transition: background 0.6s;
 }
 
 #container{
-	max-width: 1300px;
+	max-width: 1000px;
 	margin: 15px auto;
 }
 
