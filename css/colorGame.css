@@ -21,15 +21,17 @@ body{
 }
 
 .square{
-	max-width: 140px;
+	max-width: 150px;
+	max-height: 150px;
 	float: left;
-	margin: 8px;
+	padding: 0;
 	text-align: center;
+	border: 5px solid #232323;
 	transition: background 0.6s;
 }
 
 #container{
-	max-width: 600px;
+	max-width: 450px;
 	margin: 15px auto;
 }
 
@@ -105,5 +107,5 @@ button:hover {
 
 
 *, ::after, ::before {
-    box-sizing: content-box !important;
+    box-sizing: border-box !important;
 }
