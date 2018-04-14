@@ -39,7 +39,8 @@ function resetSquares(){
   			resetSquares();
 		}
 		else{
-			window.open("exit.html", "Thanks for playing!");
+			alert("Thanks for playing!");
+			window.close();
 		}
 	}	
 	resetColors();
@@ -71,7 +72,7 @@ for (var i = 0; i < squares.length; i++) {
 			if (attempts == 10) {
 				gameOver = true;
 			}
-			window.setTimeout(resetSquares, 3000);
+			window.setTimeout(resetSquares, 2000);
 		}
 	})
 }
