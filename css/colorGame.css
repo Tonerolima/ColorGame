@@ -62,7 +62,7 @@ h1{
 
 #header3 {
 	background: rgb(0, 150, 200);
-	padding-top: 5px;
+	font-size: 110%;
 	font-family: 'Gugi', cursive;
 }
 
@@ -82,8 +82,9 @@ div span {
 	margin-right: 30%;
 }
 
-.buttons {
+button {
 	padding-right: 3px;
+	outline: none;
 	border: none;
 	height: 100%;
 	background: none;
