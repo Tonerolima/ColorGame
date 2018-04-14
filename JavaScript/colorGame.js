@@ -17,6 +17,7 @@ var highScore = 0;
 var attempts = 0;
 var gameWon = false;
 var gameOver = false;
+var clicked = false;
 var rgbValue = pickColor();
 var selected = gameMode[1];
 var correctSquare = "";
@@ -28,14 +29,25 @@ function resetSquares(){
 	resultDiv.style.backgroundColor = "rgb(0, 150, 200)";
 	header.style.backgroundColor = "rgb(0, 150, 200)";
 	gameWon = false;
+	clicked = false;
 	alertDiv.hidden = true;
 	alertDiv.innerHTML = '';
+	if (gameOver === true) {
+		if (window.confirm("Your score is: "+highScore+"\nWould you like to play again?")) { 
+  			gameOver = false;
+  			resetValues();
+  			resetSquares();
+		}
+		else{
+			window.open("exit.html", "Thanks for playing!");
+		}
+	}	
 	resetColors();
 }
 
 for (var i = 0; i < squares.length; i++) {
 	squares[i].addEventListener("click", function(){
-		if (!gameOver) {
+		if (!gameOver && !clicked) {
 			if (!gameWon) {
 				alertDiv.hidden = false;
 				if(this.style.backgroundColor == targetColor.textContent){
@@ -53,15 +65,13 @@ for (var i = 0; i < squares.length; i++) {
 				attempts++
 				attemptsText.textContent = attempts;
 				gameWon = true;
+				clicked = true;
 			}
 
 			if (attempts == 10) {
-				reset.textContent = "PLAY AGAIN?";
 				gameOver = true;
 			}
-			else {
-				window.setTimeout(resetSquares, 3000);
-			}
+			window.setTimeout(resetSquares, 3000);
 		}
 	})
 }
@@ -126,9 +136,6 @@ function toggleSquares(mode){
 
 reset.addEventListener("click", function(){
 	resetSquares();
-	if (gameOver === true) {
-		resetValues();
-	}	
 })
 
 for (var i = 0; i < gameMode.length; i++) {
@@ -152,7 +159,5 @@ for (var i = 0; i < gameMode.length; i++) {
 		}
 	})
 }
-
-
 
 resetSquares();
