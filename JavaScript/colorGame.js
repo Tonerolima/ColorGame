@@ -57,6 +57,7 @@ for (var i = 0; i < squares.length; i++) {
 				} else{
 					this.style.backgroundColor = document.body.style.backgroundColor;
 					correctSquare.classList.add("correct");
+					correctSquare.style.border= "6px solid green";
 					alertDiv.innerHTML = '<span>Wrong!</span> <i class="fa fa-ban fa-lg"></i>';
 					alertDiv.style.color = "red";
 				}
@@ -79,6 +80,7 @@ function resetColors(){
 	rgbValue = pickColor();
 	targetColor.textContent = rgbValue;
 	for (var i = 0; i < squares.length; i++) {
+		squares[i].style.border = "5px solid #232323";
 		squares[i].style.backgroundColor = colors[i];
 		squares[i].classList.remove("correct");
 		if (colors[i] == rgbValue) {
