@@ -25,9 +25,6 @@ var correctSquare = "";
 targetColor.textContent = rgbValue;
 
 function resetSquares(){
-	selected.style.backgroundColor = "rgb(0, 150, 200)";
-	resultDiv.style.backgroundColor = "rgb(0, 150, 200)";
-	header.style.backgroundColor = "rgb(0, 150, 200)";
 	gameWon = false;
 	clicked = false;
 	alertDiv.hidden = true;
@@ -119,9 +116,6 @@ function applySameColor(){
 	for (var i = 0; i < squares.length; i++) {
 		squares[i].style.backgroundColor = rgbValue;
 	}
-	selected.style.backgroundColor = rgbValue;
-	header.style.backgroundColor = rgbValue;
-	resultDiv.style.backgroundColor = rgbValue;
 }
 
 function pickColor(){
