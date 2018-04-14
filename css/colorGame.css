@@ -4,16 +4,27 @@ body{
 	text-transform: uppercase;
 	color: #fff;
 	text-align: center;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Merriweather Sans', sans-serif;
+
+}
+
+.correct {
+	outline: 0.9rem double green;
+	outline-offset: 0;
+}
+
+#alert span{
+	color: #fff;
+	vertical-align: middle;
+	letter-spacing: 1px;
+	font-size: 20px;
 }
 
 .square{
-	border-radius: 15px;
 	max-width: 150px;
-	min-width: 50px;
-	padding-bottom: 170px;
 	float: left;
 	margin: 8px;
+	text-align: center;
 	transition: background 0.6s;
 }
 
@@ -45,11 +56,18 @@ h1{
 #header2{
 	background: rgb(255, 255, 255);
 	padding: 0px;
+	text-align: center;
+
 }
 
 #header3 {
 	background: rgb(0, 150, 200);
 	padding-top: 5px;
+	font-family: 'Gugi', cursive;
+}
+
+.scorevalues {
+	vertical-align: baseline;
 }
 
 div span {
