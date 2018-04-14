@@ -42,13 +42,13 @@ for (var i = 0; i < squares.length; i++) {
 					highScore++
 					highScoreText.textContent = highScore;
 					alertDiv.innerHTML = '<span>Correct!</span> <i class="fa fa-check fa-lg"></i>';
-					alertDiv.style.backgroundColor = "green";
+					alertDiv.style.color = "green";
 					applySameColor();
 				} else{
 					this.style.backgroundColor = document.body.style.backgroundColor;
 					correctSquare.classList.add("correct");
 					alertDiv.innerHTML = '<span>Wrong!</span> <i class="fa fa-ban fa-lg"></i>';
-					alertDiv.style.backgroundColor = "red";
+					alertDiv.style.color = "red";
 				}
 				attempts++
 				attemptsText.textContent = attempts;
