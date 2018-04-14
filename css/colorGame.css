@@ -13,8 +13,8 @@ body{
 	outline-offset: 0;
 }
 
-#alert span{
-	color: #fff;
+#alert{
+	background-color: #fff;
 	vertical-align: middle;
 	letter-spacing: 1px;
 	font-size: 20px;
