@@ -69,8 +69,9 @@ for (var i = 0; i < squares.length; i++) {
 
 			if (attempts == 10) {
 				gameOver = true;
+				reset.textContent = "PLAY AGAIN?"
 			}
-			window.setTimeout(resetSquares, 2000);
+			window.setTimeout(resetSquares, 2500);
 		}
 	})
 }
