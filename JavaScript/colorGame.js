@@ -130,6 +130,21 @@ function toggleSquares(mode){
 	}
 }
 
+function changeMode(a){
+	gameMode[0].classList.remove("selected")
+	gameMode[1].classList.remove("selected")
+	a.classList.add("selected")
+	if (a.textContent == "EASY") {
+		squareArrSize = 4;
+		toggleSquares("none")
+		selected = gameMode[0]
+	} else {
+		squareArrSize = 6;
+		toggleSquares("block")
+		selected = gameMode[1]
+	}
+}
+
 reset.addEventListener("click", function(){
 	if (attempts != 0) {
 		if (!gameOver) {
@@ -148,35 +163,13 @@ for (var i = 0; i < gameMode.length; i++) {
 		if (!gameOver && selected != this) {
 			if (attempts > 0) {
 				if (window.confirm("This will reset the game. Do you want to continue?")) { 
-		  			gameMode[0].classList.remove("selected")
-					gameMode[1].classList.remove("selected")
-					this.classList.add("selected")
-					if (this.textContent == "EASY") {
-						squareArrSize = 4;
-						toggleSquares("none")
-						selected = gameMode[0]
-					} else {
-						squareArrSize = 6;
-						toggleSquares("block")
-						selected = gameMode[1]
-					}
+		  			changeMode(this);
 					resetValues();
 					resetSquares();
 				}
 			}
 			else{
-				gameMode[0].classList.remove("selected")
-				gameMode[1].classList.remove("selected")
-				this.classList.add("selected")
-				if (this.textContent == "EASY") {
-					squareArrSize = 4;
-					toggleSquares("none")
-					selected = gameMode[0]
-				} else {
-					squareArrSize = 6;
-					toggleSquares("block")
-					selected = gameMode[1]
-					}
+				changeMode(this);
 				resetSquares();
 			}
 		}
