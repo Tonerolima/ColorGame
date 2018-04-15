@@ -69,7 +69,6 @@ for (var i = 0; i < squares.length; i++) {
 
 			if (attempts == 10) {
 				gameOver = true;
-				reset.textContent = "PLAY AGAIN?"
 			}
 			window.setTimeout(resetSquares, 2500);
 		}
@@ -96,7 +95,6 @@ function resetValues(){
 	attempts = 0;
 	attemptsText.textContent = attempts;
 	gameOver = false;
-	reset.textContent = "NEW COLORS"
 }
 
 function randomRgb(){
@@ -134,6 +132,7 @@ function toggleSquares(mode){
 
 reset.addEventListener("click", function(){
 	resetSquares();
+	resetValues();
 })
 
 for (var i = 0; i < gameMode.length; i++) {
