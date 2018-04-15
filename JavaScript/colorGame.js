@@ -131,23 +131,43 @@ function toggleSquares(mode){
 }
 
 reset.addEventListener("click", function(){
-	if (!gameOver) {
-		if (window.confirm("Are you sure you want to reset this game?")) { 
-  			resetSquares();
-			resetValues();
+	if (attempts != 0) {
+		if (!gameOver) {
+			if (window.confirm("Are you sure you want to reset this game?")) { 
+	  			resetSquares();
+				resetValues();
+			}
 		}
+	} else {
+		resetSquares();
 	}
 })
 
 for (var i = 0; i < gameMode.length; i++) {
 	gameMode[i].addEventListener("click", function(){
 		if (!gameOver && selected != this) {
-			if (window.confirm("This will reset the game. Do you want to continue?")) { 
-	  			gameMode[0].classList.remove("selected")
+			if (attempts > 0) {
+				if (window.confirm("This will reset the game. Do you want to continue?")) { 
+		  			gameMode[0].classList.remove("selected")
+					gameMode[1].classList.remove("selected")
+					this.classList.add("selected")
+					if (this.textContent == "EASY") {
+						squareArrSize = 4;
+						toggleSquares("none")
+						selected = gameMode[0]
+					} else {
+						squareArrSize = 6;
+						toggleSquares("block")
+						selected = gameMode[1]
+					}
+					resetValues();
+					resetSquares();
+				}
+			}
+			else{
+				gameMode[0].classList.remove("selected")
 				gameMode[1].classList.remove("selected")
 				this.classList.add("selected")
-				highScore = 0;
-				attempts = 0;
 				if (this.textContent == "EASY") {
 					squareArrSize = 4;
 					toggleSquares("none")
@@ -156,8 +176,7 @@ for (var i = 0; i < gameMode.length; i++) {
 					squareArrSize = 6;
 					toggleSquares("block")
 					selected = gameMode[1]
-				}
-				resetValues();
+					}
 				resetSquares();
 			}
 		}
