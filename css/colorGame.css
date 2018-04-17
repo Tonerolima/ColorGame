@@ -58,7 +58,6 @@ h1{
 	padding: 0px;
 	margin: 0;
 	text-align: center;
-	color: rgb(0, 150, 200);
 }
 
 #header3 {
@@ -84,6 +83,7 @@ button {
 	transition: all 0.3s;
 	font-weight: 700;
 	font-size: 1rem;
+	color: rgb(0, 150, 200);
 }
 
 span {
