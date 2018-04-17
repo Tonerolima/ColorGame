@@ -4,6 +4,7 @@ body{
 	color: #fff;
 	text-align: center;
 	font-family: 'Merriweather Sans', sans-serif;
+	text-transform: uppercase;
 }
 
 .correct {
