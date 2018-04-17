@@ -177,3 +177,9 @@ for (var i = 0; i < gameMode.length; i++) {
 }
 
 resetSquares();
+
+window.setTimeout(function(){
+	if (window.confirm("Welcome! \n \nThe goal of this game is to learn how colors are represented on screen.\n \nSelect the box that matches the color code on top of the page in RGB format. \n \nNeed help? Click 'OK' to learn about the RGB color format or 'Cancel' to close this message")){
+		window.open("https://en.wikipedia.org/wiki/RGB_color_model#Additive_colors")
+	}
+}, 1000)
