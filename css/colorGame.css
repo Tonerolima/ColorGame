@@ -8,7 +8,7 @@ body{
 }
 
 .correct {
-	outline: 0.3rem ridge green;
+	outline: 0.7rem ridge white;
 	outline-offset: 0;
 }
 

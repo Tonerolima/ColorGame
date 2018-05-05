@@ -9,6 +9,7 @@ var highScoreText = document.getElementById("highscoretext");
 var attemptsText = document.getElementById("attemptstext");
 var alertDiv = document.getElementById("alert");
 var resultDiv = document.getElementById("header3");
+var container = document.getElementById('container')
 
 
 var squareArrSize = 6;
@@ -56,8 +57,8 @@ for (var i = 0; i < squares.length; i++) {
 					applySameColor();
 				} else{
 					this.style.backgroundColor = document.body.style.backgroundColor;
-					correctSquare.classList.add("correct");
-					correctSquare.style.border= "6px solid green";
+					// correctSquare.classList.add("correct");
+					correctSquare.style.border= "12px solid white";
 					alertDiv.innerHTML = '<span>Wrong!</span> <i class="fa fa-ban fa-lg"></i>';
 					alertDiv.style.color = "red";
 				}
@@ -136,12 +137,14 @@ function changeMode(a){
 	a.classList.add("selected")
 	if (a.textContent == "EASY") {
 		squareArrSize = 4;
-		toggleSquares("none")
-		selected = gameMode[0]
+		toggleSquares("none");
+		selected = gameMode[0];
+		container.style.maxWidth = '320px';
 	} else {
 		squareArrSize = 6;
-		toggleSquares("block")
-		selected = gameMode[1]
+		toggleSquares("block");
+		selected = gameMode[1];
+		container.style.maxWidth = '480px';
 	}
 }
 
