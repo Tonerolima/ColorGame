@@ -139,12 +139,12 @@ function changeMode(a){
 		squareArrSize = 4;
 		toggleSquares("none");
 		selected = gameMode[0];
-		container.style.maxWidth = '320px';
+		container.style.maxWidth = '400px';
 	} else {
 		squareArrSize = 6;
 		toggleSquares("block");
 		selected = gameMode[1];
-		container.style.maxWidth = '480px';
+		container.style.maxWidth = '600px';
 	}
 }
 
@@ -181,8 +181,62 @@ for (var i = 0; i < gameMode.length; i++) {
 
 resetSquares();
 
-window.setTimeout(function(){
-	if (window.confirm("Welcome! \n \nThe goal of this game is to learn how colors are represented on screen.\n \nSelect the box that matches the color code on top of the page in RGB format. \n \nNeed help? Click 'OK' to learn about the RGB color format or 'Cancel' to close this message")){
-		window.open("https://en.wikipedia.org/wiki/RGB_color_model#Additive_colors")
-	}
-}, 1000)
+
+var red = document.getElementById('r');
+var green = document.getElementById('g');
+var blue = document.getElementById('b');
+var labels = document.getElementsByTagName('input');
+var rgbCanvas = document.getElementById('rgb-canvas');
+
+for (var i = 0; i < labels.length; i++) {
+	labels[i].addEventListener('change', function(){
+		rgbCanvas.style.background = 'rgb('+red.value+', '+green.value+', '+blue.value+')'
+	})
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+  	slideIndex = 1
+  }
+
+  if (n < 1) {
+  	slideIndex = slides.length
+  }
+
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+
+var skip = document.getElementById('skip');
+var overlay = document.getElementById('overlay');
+skip.addEventListener('click', function(){
+	overlay.style.display = 'none';
+})
+
+// window.setTimeout(function(){
+// 	if (window.confirm("Welcome! \n \nThe goal of this game is to learn how colors are represented on screen.\n \nSelect the box that matches the color code on top of the page in RGB format. \n \nNeed help? Click 'OK' to learn about the RGB color format or 'Cancel' to close this message")){
+// 		window.open("https://en.wikipedia.org/wiki/RGB_color_model#Additive_colors")
+// 	}
+// }, 1000)

@@ -9,25 +9,24 @@
 
 </head>
 <body>
-	<h1>
-		color game
-		<br>
-		<span id="rgb">RGB</span>
-		
-	</h1>
-	<div id="header2" class="headers">
-		<button id="reset">RESET GAME</button>
-		<button class="mode" id="easy">EASY</button>
-		<button class="mode selected" id="hard">HARD</button>
+	<div id="header">
+		<div id="header1">
+			<h1>RGB COLOR GAME</h1>
+			<h2 id="rgb">RGB</h2>
+		</div>
+		<div class="headers" id="header2">
+			<div><button id="reset">RESET</button></div>
+			<div id="alert" hidden="true"><span></span></div>
+			<div>
+				<button class="mode" id="easy">EASY</button>
+				<button class="mode selected" id="hard">HARD</button>
+			</div>
+		</div>
+		<div class="headers" id="header3">
+			<div id="highscore">SCORE: <span class="scorevalues" id="highscoretext">0</span></div>
+			<div id="highscore">ATTEMPTS: <span class="scorevalues" id="attemptstext">0</span></div>
+		</div>
 	</div>
-	<div id="header3" class="headers">
-		<span id="highscore">SCORE: <span class="scorevalues" id="highscoretext">0</span></span>
-		<span id="attempts">ATTEMPTS: <span class="scorevalues" id="attemptstext">0</span></span>
-	</div>
-	<div class="headers" id="alert" hidden="true">
-		<span></span>
-	</div>
-
 
 	<div id="container" class="row">
 		<canvas class="square"></canvas>
@@ -37,7 +36,73 @@
 		<canvas class="square"></canvas>
 		<canvas class="square"></canvas>
 	</div>
+	<div id="overlay">
+		<h2 style="text-align: center;">About RGB Color Code</h2>
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+				<p>
+					There are 3 primary colors, <span style="color: red">Red</span> <span style="color: green">Green</span> <span style="color: blue">Blue</span> (RGB), which when added in varying quantities produces a broad array of colors. <br><br> For instance, when Red is added to Green we get <span style="color: yellow">Yellow</span> and when Green is combined with Blue we get <span style="color: cyan">Cyan</span>. Mixing all 3 colors produces White as seen in the image below. In contrast, no colors = black.
+				</p>
+				<img src="https://res.cloudinary.com/tonerolima/image/upload/v1525629485/220px-AdditiveColor.svg.png">
+			</div>
+
+			<div class="mySlides fade">
+				<p>
+					Mixing equal amounts of the primary colors produce basic secondary colors but as we know, there are usually several shades of the same color. For instance <span style="color: #FF0077">wine</span> is brighter than <span style="color: #93050B">horse-blood</span> even though they are both labelled 'Red'.
+					<br><br>
+					This varying degree of intensity is the result of mixing uneven amounts of the primary colors. Each color in the RGB spctrum has a range of 0 to 255, so changing those values result in very unique colors.
+					<br><br>
+					Try changing the values in the text boxes below and observe the resulting color in the square.
+				</p>
+				<div id="rgb-test">
+					<div id="rgb-input">
+						<div class="rgb-test">
+							<label>Red: </label>
+							<label>Green: </label>
+							<label>Blue: </label>
+						</div>
+						<div class="rgb-test">
+							<input type="number" value="0" min="0" max="255" id="r">
+							<input type="number" value="0" min="0" max="255" id="g">
+							<input type="number" value="0" min="0" max="255" id="b">
+						</div>
+					</div>
+					<div>
+						<canvas id="rgb-canvas"></canvas>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="mySlides fade">
+				<p>
+					The rules of the game is simple and straightforward. All you have to do is select the box that correctly displays the color that corresponds with the rgb color code on the top of the page. <br><br>
+
+					You have 10 attempts. You can change the game mode to easy if you are new to RGB. You can always reset the game anytime you like with the RESET button (your score will be lost)
+				</p>
+
+			</div>
+			<!-- Next and previous buttons -->
+			<div id="slideButtons">
+				<a id="prev" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a id="next" class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+		<br>
+
+			<!-- The dots/circles -->
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span> 
+			<span class="dot" onclick="currentSlide(2)"></span> 
+			<span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+		<button id="skip" style="margin-left: 10%; margin-top: 15px">
+			Skip Tutotial
+		</button>
+
+	</div>
 
 	<script type="text/javascript" src="JavaScript/colorGame.js"></script>
+
 </body>
 </html>
