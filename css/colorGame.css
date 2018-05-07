@@ -168,8 +168,8 @@ button:hover {
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 40%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
