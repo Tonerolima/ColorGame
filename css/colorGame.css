@@ -84,7 +84,7 @@ h2 {
 
 @media all and (min-width: 800px){
 	.headers {
-		padding: 0 150px;
+		justify-content: space-around;
 	}
 
 	.square{
@@ -98,12 +98,6 @@ h2 {
 	}
 }
 
-@media all and (min-width: 1000px){
-	.headers {
-		padding: 0 30%;
-	}
-}
-
 @media all and (max-height: 620px){
 	.square {
 		width: 140px;
@@ -112,6 +106,7 @@ h2 {
 
 	#container {
 		margin: 1px auto;
+		max-width: 420px;
 	}
 }
 
@@ -246,19 +241,26 @@ button:hover {
 	justify-content: space-around;
 }
 
+label {
+	font-size: 20px;
+}
 
 input {
 	border-radius: 5px;
 	width: 50px;
-	height: 20px;
+	height: 30px;
 	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 20px;
 }
 
 #rgb-test {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-top: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 160px;
 }
 
 #rgb-input {
@@ -267,8 +269,27 @@ input {
 }
 
 #rgb-canvas {
-	width: 140px;
-	height: 140px;
+	border: 2px solid white;
+	width: 150px;
+	height: 150px;
 	background-color: rgb(0, 0, 0);
 	border-radius: 5px;
+	margin-left: 10px;
+}
+
+p {
+	-webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.fa {
+	font-size: 1.6rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

@@ -235,6 +235,78 @@ skip.addEventListener('click', function(){
 	overlay.style.display = 'none';
 })
 
+var upArrows = document.getElementsByClassName('fa-caret-up');
+var downArrows = document.getElementsByClassName('fa-caret-down');
+
+function applyCanvasColor(){
+	rgbCanvas.style.background = 'rgb('+red.value+', '+green.value+', '+blue.value+')'
+}
+
+function addColor(c){
+	if (!(parseInt(c.value)+5 > 255)) {
+		c.value = parseInt(c.value)+5;
+		applyCanvasColor();
+	}
+	else {
+		c.value = 255;
+		applyCanvasColor();
+	}
+}
+
+function minusColor(c){
+	if (!(parseInt(c.value)-5 < 0)) {
+		c.value = parseInt(c.value)-5;
+		applyCanvasColor();
+	}
+	else {
+		c.value = 0;
+		applyCanvasColor();
+	}
+}
+
+// function addColorListener(e){
+// 	if (e.id == 'r-up') {
+// 		addColor(red);
+// 	}
+// 	else if (e.id == 'g-up') {
+// 		addColor(green);
+// 	}
+// 	else {
+// 		addColor(blue);
+// 	}
+// }
+
+
+for (var i = 0; i < upArrows.length; i++) {
+	upArrows[i].addEventListener('click', function(){
+		if (this.id == 'r-up') {
+			addColor(red);
+		}
+		else if (this.id == 'g-up') {
+			addColor(green);
+		}
+		else {
+			addColor(blue);
+		}
+	})
+
+}
+
+for (var i = 0; i < downArrows.length; i++) {
+	downArrows[i].addEventListener('click', function(){
+		if (this.id == 'r-down') {
+			minusColor(red);
+		}
+		else if (this.id == 'g-down') {
+			minusColor(green);
+		}
+		else {
+			minusColor(blue);
+		}
+	})
+}
+
+
 // window.setTimeout(function(){
 // 	if (window.confirm("Welcome! \n \nThe goal of this game is to learn how colors are represented on screen.\n \nSelect the box that matches the color code on top of the page in RGB format. \n \nNeed help? Click 'OK' to learn about the RGB color format or 'Cancel' to close this message")){
 // 		window.open("https://en.wikipedia.org/wiki/RGB_color_model#Additive_colors")
