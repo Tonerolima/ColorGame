@@ -145,8 +145,14 @@ button:hover {
     background-color: rgba(0,0,0,0.9); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     /*cursor: pointer; */
-    padding-top: 50px;
+    padding-top: 30px;
+    overflow-y: scroll;
 }
+
+#overlay::-webkit-scrollbar { 
+    display: none; 
+}
+
 
 .slideshow-container {
   max-width: 800px;
@@ -258,8 +264,7 @@ input {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 20px 0;
 	height: 160px;
 }
 
@@ -292,4 +297,10 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+}
+
+#skip {
+	display: flex;
+	flex-direction: row-reverse;
+	margin-right: 10%;
 }
