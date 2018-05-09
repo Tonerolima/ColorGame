@@ -16,6 +16,15 @@ body{
 	letter-spacing: 1px;
 }
 
+.btn {
+	width: 130px;
+}
+
+#btn-1 {
+	width: 120px;
+	text-align: left;
+}
+
 .square{
 	width: 160px;
 	height: 160px;
