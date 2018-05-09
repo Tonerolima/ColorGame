@@ -1,3 +1,4 @@
+
 var targetColor = document.querySelector("#rgb");
 var messageDisplay = document.getElementById("message");
 var squares = document.querySelectorAll(".square");
@@ -58,7 +59,7 @@ for (var i = 0; i < squares.length; i++) {
 				} else{
 					this.style.backgroundColor = document.body.style.backgroundColor;
 					// correctSquare.classList.add("correct");
-					correctSquare.style.border= "12px solid white";
+					correctSquare.style.border= "12px outset white";
 					alertDiv.innerHTML = '<span>Wrong!</span> <i class="fa fa-ban fa-lg"></i>';
 					alertDiv.style.color = "red";
 				}
